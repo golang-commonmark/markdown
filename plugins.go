@@ -118,15 +118,15 @@ func init() {
 	RegisterCoreRule(400, ruleSmartQuotes)
 
 	RegisterBlockRule(100, ruleCode, nil)
-	RegisterBlockRule(200, ruleFence, []int{1100, 600, 300, 500})
-	RegisterBlockRule(300, ruleBlockQuote, []int{1100, 600, 500})
-	RegisterBlockRule(400, ruleHR, []int{1100, 600, 300, 500})
-	RegisterBlockRule(500, ruleList, []int{1100, 600, 300})
+	RegisterBlockRule(200, ruleFence, []int{1100, 600, 300, 500, 1200})
+	RegisterBlockRule(300, ruleBlockQuote, []int{1100, 600, 500, 1200})
+	RegisterBlockRule(400, ruleHR, []int{1100, 600, 300, 500, 1200})
+	RegisterBlockRule(500, ruleList, []int{1100, 600, 300, 1200})
 	RegisterBlockRule(600, ruleReference, nil)
-	RegisterBlockRule(700, ruleHeading, []int{1100, 600, 300})
+	RegisterBlockRule(700, ruleHeading, []int{1100, 600, 300, 1200})
 	RegisterBlockRule(800, ruleLHeading, nil)
-	RegisterBlockRule(900, ruleHTMLBlock, []int{1100, 600, 300})
-	RegisterBlockRule(1000, ruleTable, []int{1100, 600})
+	RegisterBlockRule(900, ruleHTMLBlock, []int{1100, 600, 300, 1200})
+	RegisterBlockRule(1000, ruleTable, []int{1100, 600, 1200})
 	RegisterBlockRule(1100, ruleParagraph, nil)
 
 	RegisterInlineRule(100, ruleText)
@@ -140,4 +140,5 @@ func init() {
 	RegisterInlineRule(900, ruleAutolink)
 	RegisterInlineRule(1000, ruleHTMLInline)
 	RegisterInlineRule(1100, ruleEntity)
+	RegisterInlineRule(1200, ruleSupScript)
 }
