@@ -77,6 +77,14 @@ type StrongClose struct {
 	Lvl int
 }
 
+type SupScriptOpen struct {
+	Lvl int
+}
+
+type SupScriptClose struct {
+	Lvl int
+}
+
 type StrikethroughOpen struct {
 	Lvl int
 }
@@ -262,6 +270,10 @@ func (t *StrongOpen) Level() int { return t.Lvl }
 
 func (t *StrongClose) Level() int { return t.Lvl }
 
+func (t *SupScriptOpen) Level() int { return t.Lvl }
+
+func (t *SupScriptClose) Level() int { return t.Lvl }
+
 func (t *StrikethroughOpen) Level() int { return t.Lvl }
 
 func (t *StrikethroughClose) Level() int { return t.Lvl }
@@ -347,6 +359,10 @@ func (t *EmphasisClose) SetLevel(lvl int) { t.Lvl = lvl }
 func (t *StrongOpen) SetLevel(lvl int) { t.Lvl = lvl }
 
 func (t *StrongClose) SetLevel(lvl int) { t.Lvl = lvl }
+
+func (t *SupScriptOpen) SetLevel(lvl int) { t.Lvl = lvl }
+
+func (t *SupScriptClose) SetLevel(lvl int) { t.Lvl = lvl }
 
 func (t *StrikethroughOpen) SetLevel(lvl int) { t.Lvl = lvl }
 
@@ -434,6 +450,10 @@ func (t *StrongOpen) Opening() bool { return true }
 
 func (t *StrongClose) Opening() bool { return false }
 
+func (t *SupScriptOpen) Opening() bool { return true }
+
+func (t *SupScriptClose) Opening() bool { return false }
+
 func (t *StrikethroughOpen) Opening() bool { return true }
 
 func (t *StrikethroughClose) Opening() bool { return false }
@@ -519,6 +539,10 @@ func (t *EmphasisClose) Closing() bool { return true }
 func (t *StrongOpen) Closing() bool { return false }
 
 func (t *StrongClose) Closing() bool { return true }
+
+func (t *SupScriptOpen) Closing() bool { return false }
+
+func (t *SupScriptClose) Closing() bool { return true }
 
 func (t *StrikethroughOpen) Closing() bool { return false }
 
@@ -606,6 +630,10 @@ func (t *StrongOpen) Block() bool { return false }
 
 func (t *StrongClose) Block() bool { return false }
 
+func (t *SupScriptOpen) Block() bool { return false }
+
+func (t *SupScriptClose) Block() bool { return false }
+
 func (t *StrikethroughOpen) Block() bool { return false }
 
 func (t *StrikethroughClose) Block() bool { return false }
@@ -691,6 +719,10 @@ func (t *EmphasisClose) Tag() string { return "em" }
 func (t *StrongOpen) Tag() string { return "strong" }
 
 func (t *StrongClose) Tag() string { return "strong" }
+
+func (t *SupScriptOpen) Tag() string { return "sup" }
+
+func (t *SupScriptClose) Tag() string { return "sup" }
 
 func (t *StrikethroughOpen) Tag() string { return "s" }
 

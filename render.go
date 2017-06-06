@@ -214,6 +214,12 @@ func (r *Renderer) renderToken(tokens []Token, idx int, options RenderOptions) {
 	case *StrongOpen:
 		r.w.WriteString("<strong>")
 
+	case *SupScriptClose:
+		r.w.WriteString("</sup>")
+
+	case *SupScriptOpen:
+		r.w.WriteString("<sup>")
+
 	case *StrikethroughClose:
 		r.w.WriteString("</s>")
 
